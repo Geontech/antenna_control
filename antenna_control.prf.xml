@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <simple id="DCE:cdc5ee18-7ceb-4ae6-bf4c-31f983179b4d" mode="readonly" name="device_kind" type="string">
+    <description>This specifies the device kind</description>
+    <value>Pi GPIO Control</value>
+    <kind kindtype="configure"/>
+    <kind kindtype="allocation"/>
+    <action type="eq"/>
+  </simple>
+  <simple id="DCE:0f99b2e4-9903-4631-9846-ff349d18ecfb" mode="readonly" name="device_model" type="string">
+    <description> This specifies the specific device</description>
+    <value>raspberry pi</value>
+    <kind kindtype="configure"/>
+    <kind kindtype="allocation"/>
+    <action type="eq"/>
+  </simple>
+  <simple id="DF_mode" mode="readwrite" type="boolean">
+    <description>True -> Enable switching (GPIO 17 set)
+False -> Disable switching (GPIO 17 clear)</description>
+    <value>false</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <struct id="switch_pattern" mode="readwrite">
+    <simple id="value" mode="readwrite" type="long">
+      <description>Switching pattern's value (0-4).</description>
+      <kind kindtype="message"/>
+      <action type="external"/>
+    </simple>
+    <configurationkind kindtype="message"/>
+  </struct>
+</properties>
